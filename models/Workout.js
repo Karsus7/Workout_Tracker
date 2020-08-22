@@ -6,13 +6,13 @@ const Schema = mongoose.Schema;
 const Exercises = new Schema({
 	// These 7 lines generate the fields used when typing in information
 	// The fields were derived from seed.js
-	type: String, 
-	name: String,
-	duration: Number,
-	distance: Number,
-	weight: Number,
-	reps: Number,
-	sets: Number,
+    type: {type: String},
+    name: {type: String,},
+    duration: {type: Number},
+    weight: {type: Number},
+    reps: {type: Number},
+    sets: {type: Number},
+    distance: {type: Number}
 });
 
 const WorkoutSchema = new Schema({
