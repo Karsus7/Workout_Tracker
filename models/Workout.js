@@ -1,37 +1,33 @@
+// Most of the code for this file was derived from: 17-NoSQL\01-Activities\26-Stu-Mini-Project\Solved\models\transaction.js
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const ExerciseSchema = new Schema({
-	// creates type field
+const Exercises = new Schema({
+	// These 7 lines generate the fields used when typing in information
+	// The fields were derived from seed.js
 	type: String, 
-	// creates name field
 	name: String,
-	// creates duration field
 	duration: Number,
-	// creates distance field
 	distance: Number,
-	// creates weight field
 	weight: Number,
-	// creates reps field
 	reps: Number,
-	// creates sets field
 	sets: Number,
 });
 
 const WorkoutSchema = new Schema({
+    // This shows the what day a workout was done
     day: {
 		type: Date,
 		default: Date.now,
     },
-    // this will show the exercises for the day 
-    exercises: [ExerciseSchema]
+    // This causes the Exercises to display 
+    exercises: [Exercises]
 
 });
 
 
-
-// compiling a model with the specified information
+// This constant is a combination of the previous sections formatted and ready to be exported below
 const Workout = mongoose.model("Workout", WorkoutSchema);
 
 module.exports = Workout;
